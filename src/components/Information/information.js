@@ -1,14 +1,18 @@
 import { InformationLayout } from "./informationLayout";
-export function Information(props) {
-    console.log(`props = ${props.player}`);
+export function Information({player, gameState, draw}) {
+    console.log(`В компоненте Information`);
+    console.log(`player = ${player} gameState = ${gameState} draw = ${draw}`);
+    
     let message;
-    if (props.gameState) {
-        message = 'Игра окончена.';
-        if (props.draw)
+    if (gameState) {
+        message = 'Победа ' + player;
+        if (draw)
             message += '  Ничья';
     }    
     else
-        message = "Играет " + props.player;
+        message = "Играет " + player;
+
+        console.log(`message = ${message}`);
 
     return (
         <div className="information" >

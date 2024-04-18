@@ -1,8 +1,8 @@
 import '../App.css';
-export function InformationLayout(props) {
+export function InformationLayout({msg}) {
     return (
         <div className="message">
-            {props.msg}
+            {msg}
         </div>
     )
 

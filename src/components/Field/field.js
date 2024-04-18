@@ -1,13 +1,12 @@
 import { FieldLayout } from "./fieldLayout";
 
 
-export function Field(props) {
+export function Field({field, onClickCeil }) {
     
-    console.log(`В компоненте Field`);
     return (
         <div className="table-box">
             
-                <FieldLayout arr={props.field}/>
+                <FieldLayout arr={field} onClickCl={onClickCeil}/>
             
         </div>
     );
