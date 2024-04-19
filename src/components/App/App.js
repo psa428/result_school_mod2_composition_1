@@ -34,12 +34,24 @@ function App() {
      *  Игра окончена?
      *  Если да, вернем победителя
      **********************************************************/
+      let tmp = [];
+      //  Ничья?
+      tmp.splice(0, 8);
+      tmp = tmp.concat(field[0], field[1], field[2]);
+      console.log(`tmp = ${tmp}`);
+      let res = tmp.every((element) => (element === 'X' || element === '0'));
+      console.log(`Ничья res = ${res}`);
+      if (res) {
+        setIsDraw(true);
+        return 'Ничья';
+      };  
+
     const players = ['0', 'X'];
-    let tmp = [];
+    
 
     for (let player of players){
       //  Ищем победителя по горизонтали
-      console.log('Ищем победителя по горизонтали');
+      // console.log('Ищем победителя по горизонтали');
       for (let str of field) {
         let res = str.every((element) => element === player);
         if (res) 
@@ -48,14 +60,14 @@ function App() {
       };
       
       //  Ищем победителя по вертикали
-      console.log('Ищем победителя по вертикали');
+      
       tmp.splice(0, 3);
       for (let j = 0; j < 3; j++) {
         for (let i = 0; i < 3; i++){
           tmp.push(field[i][j]);
           
         };  
-        console.log(`gameOver tmp = ${tmp}`);
+        // console.log(`gameOver tmp = ${tmp}`);
         let res = tmp.every((element) => element === player);
         if (res)
           return player + ' победил по вертикали'
@@ -64,7 +76,7 @@ function App() {
       };
 
       //  Ищем победителя по диаганали
-      console.log('Ищем победителя по диагоналт');
+      
 
       tmp.splice(0, 3);
       tmp.push(field[0][0], field[1][1], field[2][2]);
@@ -111,7 +123,7 @@ function App() {
     <div className="App">
       <Information player={currentPlayer} gameState={isGameEnded} draw={isDraw}/> 
       <Field field={field} onClickCeil={treatOnClick}/>
-      <button onClick={() => newGame()}>Новая игра</button>
+      <button className="btn" onClick={() => newGame()}>Новая игра</button>
     </div>
   );
 }

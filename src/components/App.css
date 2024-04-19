@@ -1,10 +1,17 @@
 .App {
   text-align: center;
 }
+.information {
+  
+  margin: auto;
+  width: 400px;
+ 
+}
 .table-box {
   margin: auto;
-  height: 400px;
-  width: 400px;
+  height: 350px;
+  width: 300px;
+  
 }
 
 .table-row {
@@ -28,6 +35,18 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.message {
+  font-size: 200%;
+  color: #04AA6D;
+}
+.btn{
+  background-color: #04AA6D; /* Green */
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  
+  font-size: 16px;
 }
 
 

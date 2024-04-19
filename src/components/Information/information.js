@@ -1,18 +1,19 @@
 import { InformationLayout } from "./informationLayout";
+import PropTypes from 'prop-types';
 export function Information({player, gameState, draw}) {
-    console.log(`В компоненте Information`);
-    console.log(`player = ${player} gameState = ${gameState} draw = ${draw}`);
+    // console.log(`В компоненте Information`);
+    // console.log(`player = ${player} gameState = ${gameState} draw = ${draw}`);
     
     let message;
-    if (gameState) {
-        message = 'Победа ' + player;
-        if (draw)
-            message += '  Ничья';
-    }    
+    if (draw)
+            message = 'Ничья';
+    else if (gameState) 
+        message = 'Победа ' + player;   
+        
     else
         message = "Играет " + player;
 
-        console.log(`message = ${message}`);
+        // console.log(`message = ${message}`);
 
     return (
         <div className="information" >
@@ -20,4 +21,10 @@ export function Information({player, gameState, draw}) {
 
         </div>
     )
+};
+
+Information.propTypes = {
+    player:     PropTypes.string,
+    gameState:  PropTypes.bool,
+    draw:       PropTypes.bool
 }

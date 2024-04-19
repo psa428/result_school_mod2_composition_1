@@ -1,7 +1,8 @@
 import '../App.css';
+import PropTypes from 'prop-types';
 
 export function FieldLayout({arr, onClickCl})  {
-    console.log(`В компоненте FieldLayout`);
+    // console.log(`В компоненте FieldLayout`);
     return (
         <table>
             {
@@ -18,10 +19,11 @@ export function FieldLayout({arr, onClickCl})  {
                     </tr>
                 ))
             }
-
-        </table>
-        
-             
-        
+        </table>                       
     );
+};
+
+FieldLayout.propTypes = {
+    arr:    PropTypes.array,
+    onClickCl:  PropTypes.func
 }

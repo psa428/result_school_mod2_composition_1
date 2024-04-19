@@ -1,4 +1,5 @@
 import '../App.css';
+import PropTypes from 'prop-types';
 export function InformationLayout({msg}) {
     return (
         <div className="message">
@@ -6,4 +7,8 @@ export function InformationLayout({msg}) {
         </div>
     )
 
+};
+
+InformationLayout.propTypes = {
+    msg:    PropTypes.string
 }

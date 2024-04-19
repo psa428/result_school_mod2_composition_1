@@ -1,4 +1,5 @@
 import { FieldLayout } from "./fieldLayout";
+import PropTypes from 'prop-types';
 
 
 export function Field({field, onClickCeil }) {
@@ -10,4 +11,9 @@ export function Field({field, onClickCeil }) {
             
         </div>
     );
+}
+
+Field.propTypes = {
+    field:  PropTypes.array,
+    onClickCeil:    PropTypes.func
 }
