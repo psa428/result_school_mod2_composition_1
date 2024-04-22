@@ -1,19 +1,20 @@
 import { FieldLayout } from "./fieldLayout";
 import PropTypes from 'prop-types';
+import '../App.css';
 
 
-export function Field({field, onClickCeil }) {
+export function Field({arr, onClickCl }) {
     
     return (
         <div className="table-box">
             
-                <FieldLayout arr={field} onClickCl={onClickCeil}/>
+                <FieldLayout arry={arr} onClickCl={onClickCl}/> 
             
         </div>
     );
 }
 
 Field.propTypes = {
-    field:  PropTypes.array,
-    onClickCeil:    PropTypes.func
+    arr:  PropTypes.array,
+    onClickCl:    PropTypes.func
 }

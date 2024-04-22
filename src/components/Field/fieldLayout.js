@@ -1,12 +1,12 @@
 import '../App.css';
 import PropTypes from 'prop-types';
 
-export function FieldLayout({arr, onClickCl})  {
-    // console.log(`В компоненте FieldLayout`);
+export function FieldLayout({arry, onClickCl})  {
+     
     return (
         <table>
             {
-                arr.map((row, i) => (
+                arry.map((row, i) => (
                     <tr className='table-row' key={i} id_row={i}>
                         {
                             row.map((ceil, j) => (
@@ -24,6 +24,6 @@ export function FieldLayout({arr, onClickCl})  {
 };
 
 FieldLayout.propTypes = {
-    arr:    PropTypes.array,
+    arry:    PropTypes.array,
     onClickCl:  PropTypes.func
 }
